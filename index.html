@@ -1,108 +1,234 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopperNerds - Expertos en Trade Marketing para PYMES</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --accent-color: #007BFF;
-            --text-color: #2C2C2C;
-            --background-color: #FFFFFF;
-        }
-        *, *::before, *::after { box-sizing: border-box; }
-        body { margin: 0; font-family: 'Poppins', sans-serif; color: var(--text-color); background-color: var(--background-color); line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        header { padding: 100px 0; text-align: center; }
-        header h1 { font-size: 3rem; margin-bottom: 20px; }
-        header p { font-size: 1.25rem; margin-bottom: 30px; }
-        .btn { display: inline-block; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
-        .btn-primary { background: var(--accent-color); color: #fff; margin-right: 10px; }
-        .btn-primary:hover { background: #0056c1; }
-        .btn-secondary { background: #f0f0f0; color: var(--accent-color); }
-        .btn-secondary:hover { background: #e0e0e0; }
-        section { padding: 80px 0; }
-        section h2 { font-size: 2rem; margin-bottom: 20px; }
-        .steps, .services { display: flex; flex-wrap: wrap; gap: 20px; }
-        .step-item, .service-item { flex: 1 1 calc(33.333% - 20px); background: #f9f9f9; padding: 20px; border-radius: 8px; }
-        .testimonial { background: #f9f9f9; padding: 40px; border-radius: 8px; font-style: italic; }
-        .form-embed { margin: 20px 0; background: #f9f9f9; padding: 20px; border-radius: 8px; }
-        .form-embed h3 { margin-top: 0; }
-        footer { padding: 40px 0; text-align: center; font-size: 0.9rem; background: #f5f5f5; }
-        a { color: var(--accent-color); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        @media(max-width: 768px) { .step-item, .service-item { flex: 1 1 100%; } header h1 { font-size: 2.25rem; } }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopperNerds - Expertos en Trade Marketing para PYMES</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent-color: #007BFF;
+      --accent-color-dark: #0056c1;
+      --text-color: #2C2C2C;
+      --bg-color: #f5f8ff;
+      --white: #fff;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      background: var(--bg-color);
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(135deg, var(--accent-color), var(--accent-color-dark));
+      color: var(--white);
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+      animation: slideDown 1s ease-out;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-out;
+    }
+    header p {
+      font-size: 1.25rem;
+      margin-bottom: 40px;
+      animation: fadeIn 1.5s ease-out 0.5s;
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 25px;
+      margin: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .btn-primary {
+      background: var(--white);
+      color: var(--accent-color);
+    }
+    .btn-primary:hover {
+      background: var(--accent-color);
+      color: var(--white);
+      transform: scale(1.05);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.2);
+      color: var(--white);
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.4);
+      transform: scale(1.05);
+    }
+    section { padding: 80px 20px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .steps, .services { display: flex; flex-wrap: wrap; gap: 20px; }
+    .step-item, .service-item {
+      flex: 1 1 calc(33.333% - 20px);
+      background: var(--white);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      animation: fadeIn 1s ease-out;
+    }
+    .testimonial {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 8px;
+      font-style: italic;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      animation: fadeIn 1s ease-out;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--accent-color);
+      color: var(--white);
+    }
+    #form-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      animation: fadeIn 0.5s ease-out;
+    }
+    #form-overlay .overlay-content {
+      background: var(--white);
+      border-radius: 8px;
+      width: 90%; max-width: 800px;
+      max-height: 90%;
+      overflow: auto;
+      position: relative;
+      padding: 20px;
+      animation: slideUp 0.5s ease-out;
+    }
+    #form-overlay .close-btn {
+      position: absolute;
+      top: 10px; right: 15px;
+      background: var(--accent-color);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      width: 30px; height: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @media(max-width: 768px) {
+      header h1 { font-size: 2.25rem; }
+      .step-item, .service-item { flex: 1 1 100%; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Expertos reales en Trade Marketing, Ventas y Branding para PYMES</h1>
-            <p>Conectamos profesionales con experiencia en grandes empresas con negocios que necesitan estrategia, ejecución y resultados reales.</p>
-            <a href="#form-empresas" class="btn btn-primary">Solicita asesoría</a>
-            <a href="#form-expertos" class="btn btn-secondary">Únete como experto</a>
-        </div>
-    </header>
-    <section id="que-es">
-        <div class="container">
-            <h2>🧠 ¿Qué es ShopperNerds?</h2>
-            <p>ShopperNerds es un hub de profesionales con experiencia en grandes marcas que ayudan a PYMES a crecer con estrategias de ejecución comercial, branding, ventas y marketing digital.</p>
-            <p>Nuestro objetivo es llevar el conocimiento aplicado del mundo corporativo al día a día de emprendedores y negocios en crecimiento.</p>
-        </div>
-    </section>
-    <section id="como-funciona">
-        <div class="container">
-            <h2>✅ Cómo funciona</h2>
-            <div class="steps">
-                <div class="step-item"><strong>1.</strong> Completa el formulario según tus necesidades</div>
-                <div class="step-item"><strong>2.</strong> Te contactamos para detallar el proyecto</div>
-                <div class="step-item"><strong>3.</strong> Inicias tu asesoría o proyecto de alto impacto</div>
-            </div>
-        </div>
-    </section>
-    <section id="servicios">
-        <div class="container">
-            <h2>📈 En qué podemos ayudarte</h2>
-            <div class="services">
-                <div class="service-item">Trade marketing y ejecución en PDV</div>
-                <div class="service-item">Branding y estrategia de marca</div>
-                <div class="service-item">Ventas B2B y canal tradicional</div>
-                <div class="service-item">Ecommerce y marketing digital</div>
-                <div class="service-item">Shopper insights y data accionable</div>
-            </div>
-        </div>
-    </section>
-    <section id="testimonio">
-        <div class="container">
-            <h2>👏 Testimonio (Fundador)</h2>
-            <div class="testimonial">
-                “Después de años trabajando con grandes marcas, vi que las PYMES también merecen ese nivel de estrategia. Por eso nace ShopperNerds.”<br>
-                <strong>— Jorge Gálvez, Fundador</strong>
-            </div>
-        </div>
-    </section>
-    <section id="formularios">
-        <div class="container">
-            <h2>📬 Formularios de contacto</h2>
-            <div class="form-embed" id="form-empresas">
-                <h3>Para Empresas</h3>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" width="100%" height="2175" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-            </div>
-            <div class="form-embed" id="form-expertos">
-                <h3>Para Expertos</h3>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1ootbWAUN09vI5x_p-yy9U-XbODmdEJHwxANy6mwN0beMEg/viewform?embedded=true" width="100%" height="2011" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <p>📍 Contacto y redes</p>
-            <p>Correo: <a href="mailto:jorge@shoppernerds.com">jorge@shoppernerds.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/jorgegalvezo/">Jorge Gálvez</a></p>
-        </div>
-    </footer>
+  <header>
+    <div class="container">
+      <h1>Expertos reales en Trade Marketing, Ventas y Branding para PYMES</h1>
+      <p>Conectamos profesionales con experiencia en grandes empresas con negocios que necesitan estrategia, ejecución y resultados reales.</p>
+      <a href="#" class="btn btn-primary" data-form="empresas">Solicita asesoría</a>
+      <a href="#" class="btn btn-secondary" data-form="expertos">Únete como experto</a>
+    </div>
+  </header>
+
+  <section id="que-es">
+    <div class="container">
+      <h2>🧠 ¿Qué es ShopperNerds?</h2>
+      <p>ShopperNerds es un hub de profesionales con experiencia en grandes marcas que ayudan a PYMES a crecer con estrategias de ejecución comercial, branding, ventas y marketing digital.</p>
+      <p>Nuestro objetivo es llevar el conocimiento aplicado del mundo corporativo al día a día de emprendedores y negocios en crecimiento.</p>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <div class="container">
+      <h2>✅ Cómo funciona</h2>
+      <div class="steps">
+        <div class="step-item"><strong>1.</strong> Completa el formulario según tus necesidades</div>
+        <div class="step-item"><strong>2.</strong> Te contactamos para detallar el proyecto</div>
+        <div class="step-item"><strong>3.</strong> Inicias tu asesoría o proyecto de alto impacto</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="container">
+      <h2>📈 En qué podemos ayudarte</h2>
+      <div class="services">
+        <div class="service-item">Trade marketing y ejecución en PDV</div>
+        <div class="service-item">Branding y estrategia de marca</div>
+        <div class="service-item">Ventas B2B y canal tradicional</div>
+        <div class="service-item">Ecommerce y marketing digital</div>
+        <div class="service-item">Shopper insights y data accionable</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonio">
+    <div class="container">
+      <h2>👏 Testimonio (Fundador)</h2>
+      <div class="testimonial">
+        “Después de años trabajando con grandes marcas, vi que las PYMES también merecen ese nivel de estrategia. Por eso nace ShopperNerds.”<br>
+        <strong>— Jorge Gálvez, Fundador</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overlay para formularios -->
+  <div id="form-overlay">
+    <div class="overlay-content">
+      <button class="close-btn">×</button>
+      <div id="overlay-empresas" class="form-container" style="display:none;">
+        <h2>Solicita asesoría</h2>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+      </div>
+      <div id="overlay-expertos" class="form-container" style="display:none;">
+        <h2>Únete como experto</h2>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1ootbWAUN09vI5x_p-yy9U-XbODmdEJHwxANy6mwN0beMEg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>📍 Contacto y redes</p>
+      <p>Correo: <a href="mailto:jorge@shoppernerds.com">jorge@shoppernerds.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/jorgegalvezo/">Jorge Gálvez</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-form]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const target = e.currentTarget.getAttribute('data-form');
+        document.getElementById('form-overlay').style.display = 'flex';
+        document.querySelectorAll('.form-container').forEach(c => c.style.display = 'none');
+        document.getElementById('overlay-' + target).style.display = 'block';
+      });
+    });
+    document.querySelector('.close-btn').addEventListener('click', () => {
+      document.getElementById('form-overlay').style.display = 'none';
+    });
+  </script>
 </body>
 </html>
 
