@@ -28,33 +28,15 @@
       color: var(--white);
       text-align: center;
       padding: 100px 20px;
-      position: relative;
-      animation: slideDown 1s ease-out;
     }
-    .logo {
-      max-width: 160px;
-      margin: 0 auto 20px;
+    .logo-primary, .logo-secondary {
       display: block;
-      animation: fadeIn 1s ease-out;
+      margin: 0 auto 20px;
+      max-width: 180px;
     }
-    header h1 {
-      font-size: 2.75rem;
-      margin-bottom: 10px;
-      animation: fadeIn 1.5s ease-out 0.5s;
-    }
-    header p {
-      font-size: 1.1rem;
-      animation: fadeIn 1.5s ease-out 1s;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      border-radius: 25px;
-      margin: 10px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.3s, background 0.3s;
-    }
+    header h1 { font-size: 2.75rem; margin: 10px 0; }
+    header p { font-size: 1.1rem; margin-bottom: 30px; }
+    .btn { display: inline-block; padding: 12px 28px; border-radius: 25px; margin: 10px; font-weight: 600; text-decoration: none; transition: transform 0.3s, background 0.3s; }
     .btn-primary { background: var(--white); color: var(--accent-color); }
     .btn-primary:hover { background: var(--accent-color); color: var(--white); transform: scale(1.05); }
     .btn-secondary { background: rgba(255,255,255,0.2); color: var(--white); }
@@ -62,49 +44,23 @@
     section { padding: 80px 20px; }
     section h2 { font-size: 2rem; margin-bottom: 20px; text-align: center; }
     .steps, .services { display: flex; flex-wrap: wrap; gap: 20px; }
-    .step-item, .service-item {
-      flex: 1 1 calc(33.333% - 20px);
-      background: var(--white);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      animation: fadeIn 1s ease-out;
-    }
-    .testimonial {
-      background: var(--white);
-      padding: 40px;
-      border-radius: 8px;
-      font-style: italic;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      text-align: center;
-      animation: fadeIn 1s ease-out;
-    }
-    .testimonial-img {
-      max-width: 120px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      display: block;
-      animation: fadeIn 1s ease-out;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: var(--accent-color);
-      color: var(--white);
-    }
-    #form-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 1000; animation: fadeIn 0.5s ease-out; }
-    .overlay-content { background: var(--white); border-radius: 8px; width: 90%; max-width: 800px; max-height: 90%; overflow: auto; position: relative; padding: 20px; animation: slideUp 0.5s ease-out; }
+    .step-item, .service-item { flex: 1 1 calc(33.333% - 20px); background: var(--white); padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    .testimonial { background: var(--white); padding: 40px; border-radius: 8px; font-style: italic; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; }
+    .testimonial-img { max-width: 120px; border-radius: 50%; margin: 0 auto 20px; display: block; }
+    footer { text-align: center; padding: 40px 20px; background: var(--accent-color); color: var(--white); }
+    /* Overlay */
+    #form-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 1000; }
+    .overlay-content { background: var(--white); border-radius: 8px; width: 90%; max-width: 800px; max-height: 90%; overflow: auto; position: relative; padding: 20px; }
     .close-btn { position: absolute; top: 10px; right: 15px; background: var(--accent-color); color: var(--white); border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 16px; cursor: pointer; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    @media(max-width: 768px) { header h1 { font-size: 2.25rem; } .step-item, .service-item { flex: 1 1 100%; } }
+    @media(max-width: 768px) { .step-item, .service-item { flex: 1 1 100%; } header h1 { font-size: 2.25rem; } }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <img src="assets/img/logo.png" alt="ShopperNerds Logo" class="logo">
+      <!-- Logos primarios -->
+      <img src="assets/img/logo-primary.png" alt="ShopperNerds Logo" class="logo-primary">
+      <img src="assets/img/logo-secondary.webp" alt="ShopperNerds Logo Secundario" class="logo-secondary">
       <h1>Expertos reales en Trade Marketing, Ventas y Branding para PYMES</h1>
       <p>Conectamos profesionales con experiencia en grandes empresas con negocios que necesitan estrategia, ejecución y resultados reales.</p>
       <a href="#" class="btn btn-primary" data-form="empresas">Solicita asesoría</a>
@@ -150,7 +106,7 @@
       </div>
     </div>
   </section>
-  <!-- Overlay para formularios -->
+  <!-- Overlay de Formularios -->
   <div id="form-overlay">
     <div class="overlay-content">
       <button class="close-btn">×</button>
