@@ -22,52 +22,45 @@
       background: var(--bg-color);
       overflow-x: hidden;
     }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
     header {
       background: linear-gradient(135deg, var(--accent-color), var(--accent-color-dark));
       color: var(--white);
       text-align: center;
-      padding: 120px 20px;
+      padding: 100px 20px;
       position: relative;
       animation: slideDown 1s ease-out;
     }
+    .logo {
+      max-width: 160px;
+      margin: 0 auto 20px;
+      display: block;
+      animation: fadeIn 1s ease-out;
+    }
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      animation: fadeIn 1.5s ease-out;
+      font-size: 2.75rem;
+      margin-bottom: 10px;
+      animation: fadeIn 1.5s ease-out 0.5s;
     }
     header p {
-      font-size: 1.25rem;
-      margin-bottom: 40px;
-      animation: fadeIn 1.5s ease-out 0.5s;
+      font-size: 1.1rem;
+      animation: fadeIn 1.5s ease-out 1s;
     }
     .btn {
       display: inline-block;
-      padding: 15px 30px;
+      padding: 12px 28px;
       border-radius: 25px;
       margin: 10px;
       font-weight: 600;
       text-decoration: none;
       transition: transform 0.3s, background 0.3s;
     }
-    .btn-primary {
-      background: var(--white);
-      color: var(--accent-color);
-    }
-    .btn-primary:hover {
-      background: var(--accent-color);
-      color: var(--white);
-      transform: scale(1.05);
-    }
-    .btn-secondary {
-      background: rgba(255,255,255,0.2);
-      color: var(--white);
-    }
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.4);
-      transform: scale(1.05);
-    }
+    .btn-primary { background: var(--white); color: var(--accent-color); }
+    .btn-primary:hover { background: var(--accent-color); color: var(--white); transform: scale(1.05); }
+    .btn-secondary { background: rgba(255,255,255,0.2); color: var(--white); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.4); transform: scale(1.05); }
     section { padding: 80px 20px; }
-    .container { max-width: 1100px; margin: 0 auto; }
+    section h2 { font-size: 2rem; margin-bottom: 20px; text-align: center; }
     .steps, .services { display: flex; flex-wrap: wrap; gap: 20px; }
     .step-item, .service-item {
       flex: 1 1 calc(33.333% - 20px);
@@ -83,6 +76,14 @@
       border-radius: 8px;
       font-style: italic;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+    .testimonial-img {
+      max-width: 120px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: block;
       animation: fadeIn 1s ease-out;
     }
     footer {
@@ -91,65 +92,25 @@
       background: var(--accent-color);
       color: var(--white);
     }
-    #form-overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      animation: fadeIn 0.5s ease-out;
-    }
-    #form-overlay .overlay-content {
-      background: var(--white);
-      border-radius: 8px;
-      width: 90%; max-width: 800px;
-      max-height: 90%;
-      overflow: auto;
-      position: relative;
-      padding: 20px;
-      animation: slideUp 0.5s ease-out;
-    }
-    #form-overlay .close-btn {
-      position: absolute;
-      top: 10px; right: 15px;
-      background: var(--accent-color);
-      color: var(--white);
-      border: none;
-      border-radius: 50%;
-      width: 30px; height: 30px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideDown {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    @media(max-width: 768px) {
-      header h1 { font-size: 2.25rem; }
-      .step-item, .service-item { flex: 1 1 100%; }
-    }
+    #form-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 1000; animation: fadeIn 0.5s ease-out; }
+    .overlay-content { background: var(--white); border-radius: 8px; width: 90%; max-width: 800px; max-height: 90%; overflow: auto; position: relative; padding: 20px; animation: slideUp 0.5s ease-out; }
+    .close-btn { position: absolute; top: 10px; right: 15px; background: var(--accent-color); color: var(--white); border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 16px; cursor: pointer; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @media(max-width: 768px) { header h1 { font-size: 2.25rem; } .step-item, .service-item { flex: 1 1 100%; } }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
+      <img src="assets/img/logo.png" alt="ShopperNerds Logo" class="logo">
       <h1>Expertos reales en Trade Marketing, Ventas y Branding para PYMES</h1>
       <p>Conectamos profesionales con experiencia en grandes empresas con negocios que necesitan estrategia, ejecución y resultados reales.</p>
       <a href="#" class="btn btn-primary" data-form="empresas">Solicita asesoría</a>
       <a href="#" class="btn btn-secondary" data-form="expertos">Únete como experto</a>
     </div>
   </header>
-
   <section id="que-es">
     <div class="container">
       <h2>🧠 ¿Qué es ShopperNerds?</h2>
@@ -157,7 +118,6 @@
       <p>Nuestro objetivo es llevar el conocimiento aplicado del mundo corporativo al día a día de emprendedores y negocios en crecimiento.</p>
     </div>
   </section>
-
   <section id="como-funciona">
     <div class="container">
       <h2>✅ Cómo funciona</h2>
@@ -168,7 +128,6 @@
       </div>
     </div>
   </section>
-
   <section id="servicios">
     <div class="container">
       <h2>📈 En qué podemos ayudarte</h2>
@@ -181,32 +140,30 @@
       </div>
     </div>
   </section>
-
   <section id="testimonio">
     <div class="container">
       <h2>👏 Testimonio (Fundador)</h2>
+      <img src="assets/img/testimonio-jorge-galvez.jpg" alt="Jorge Gálvez, Fundador" class="testimonial-img">
       <div class="testimonial">
         “Después de años trabajando con grandes marcas, vi que las PYMES también merecen ese nivel de estrategia. Por eso nace ShopperNerds.”<br>
         <strong>— Jorge Gálvez, Fundador</strong>
       </div>
     </div>
   </section>
-
   <!-- Overlay para formularios -->
   <div id="form-overlay">
     <div class="overlay-content">
       <button class="close-btn">×</button>
       <div id="overlay-empresas" class="form-container" style="display:none;">
         <h2>Solicita asesoría</h2>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" width="100%" height="800" frameborder="0"></iframe>
       </div>
       <div id="overlay-expertos" class="form-container" style="display:none;">
         <h2>Únete como experto</h2>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1ootbWAUN09vI5x_p-yy9U-XbODmdEJHwxANy6mwN0beMEg/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1ootbWAUN09vI5x_p-yy9U-XbODmdEJHwxANy6mwN0beMEg/viewform?embedded=true" width="100%" height="800" frameborder="0"></iframe>
       </div>
     </div>
   </div>
-
   <footer>
     <div class="container">
       <p>📍 Contacto y redes</p>
@@ -214,15 +171,14 @@
       <p>LinkedIn: <a href="https://www.linkedin.com/in/jorgegalvezo/">Jorge Gálvez</a></p>
     </div>
   </footer>
-
   <script>
     document.querySelectorAll('[data-form]').forEach(btn => {
       btn.addEventListener('click', e => {
         e.preventDefault();
-        const target = e.currentTarget.getAttribute('data-form');
+        const form = e.currentTarget.getAttribute('data-form');
         document.getElementById('form-overlay').style.display = 'flex';
         document.querySelectorAll('.form-container').forEach(c => c.style.display = 'none');
-        document.getElementById('overlay-' + target).style.display = 'block';
+        document.getElementById('overlay-' + form).style.display = 'block';
       });
     });
     document.querySelector('.close-btn').addEventListener('click', () => {
@@ -231,5 +187,3 @@
   </script>
 </body>
 </html>
-
-
