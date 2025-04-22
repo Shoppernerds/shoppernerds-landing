@@ -22,7 +22,13 @@
     .logo-primary { width:140px; margin-bottom:20px; }
     header h1 { font-size:2.5rem; margin-bottom:15px; }
     header p { font-size:1.125rem; margin-bottom:25px; }
-    .btn-custom { border-radius:50px; padding:12px 30px; font-weight:600; font-size:1rem; }
+    .btn-custom {
+      border-radius:50px;
+      padding:12px 30px;
+      font-weight:600;
+      font-size:1rem;
+      text-align:center;
+    }
     .btn-custom + .btn-custom { margin-left:10px; }
     section { padding:60px 20px; }
     .section-alt { background:var(--section-alt); }
@@ -35,7 +41,14 @@
       header { padding:60px 10px; }
       header h1 { font-size:2rem; }
       .logo-primary { width:120px; }
-      .btn-custom { display:block; width:90%; max-width:300px; margin:10px auto; padding:10px 20px; font-size:.9rem; }
+      .btn-custom {
+        display:block;
+        width:90%;
+        max-width:320px;
+        margin:8px auto;
+        padding:10px 20px;
+        font-size:.9rem;
+      }
       .row.g-4 > [class*='col-'] { flex:1 1 100%; }
       .testimonial-content { flex-direction:column; }
       .testimonial-img { margin-bottom:20px; }
@@ -58,26 +71,30 @@
 <header class="animate__animated animate__fadeIn">
   <h1>Expertos en Trade, Marketing y Ventas al servicio de tu PYME</h1>
   <p>Conéctate con profesionales que han hecho crecer a grandes marcas y ahora pueden impulsar tu negocio con estrategias probadas y foco en resultados.</p>
-  <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
-    <a href="#" class="btn btn-light btn-custom animate__animated animate__pulse" data-form="empresas">📋 Primera Asesoría Gratis</a>
-    <a href="#" class="btn btn-outline-light btn-custom animate__animated animate__pulse" data-form="expertos">🤓 Postular como Experto</a>
+  <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 w-100">
+    <a href="#" class="btn btn-light btn-custom animate__animated animate__pulse w-100 w-md-auto text-center" data-form="empresas">📋 Primera Asesoría Gratis</a>
+    <a href="#" class="btn btn-outline-light btn-custom animate__animated animate__pulse w-100 w-md-auto text-center" data-form="expertos">🤓 Postular como Experto</a>
   </div>
 </header>
 
-  <!-- Overlay de Formularios -->
-  <div id="form-overlay">
-    <div class="overlay-content">
-      <button class="close-btn">×</button>
-      <div id="overlay-empresas" style="display:none;">
-        <h4>Formulario para Empresas</h4>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" width="100%" height="600" frameborder="0"></iframe>
-      </div>
-      <div id="overlay-expertos" style="display:none;">
-        <h4>Formulario para Expertos</h4>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1ootbWAUN09vI5x_p-yy9U-XbODmdEJHwxANy6mwN0beMEg/viewform?embedded=true" width="100%" height="600" frameborder="0"></iframe>
-      </div>
+<!-- Overlay de Formularios -->
+<div id="form-overlay">
+  <div class="overlay-content">
+    <button class="close-btn">×</button>
+    <div id="overlay-empresas" style="display:none;">
+      <h4>Formulario para Empresas</h4>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" width="100%" height="600" frameborder="0"></iframe>
+    </div>
+    <div id="overlay-expertos" style="display:none;">
+      <h4>Formulario para Expertos</h4>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1ootbWAUN09vI5x_p-yy9U-XbODmdEJHwxANy6mwN0beMEg/viewform?embedded=true" width="100%" height="600" frameborder="0"></iframe>
     </div>
   </div>
+</div>
+
+</body>
+</html>
+
 
   <section id="que-es" class="section-alt animate__animated animate__fadeInUp">
     <div class="container text-center">
