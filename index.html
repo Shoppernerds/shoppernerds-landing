@@ -11,123 +11,181 @@
     :root {
       --primary: #007BFF;
       --secondary: #00d084;
+      --accent: #ff5722;
       --dark: #2C2C2C;
+      --light: #ffffff;
       --bg-light: #f8f9fa;
+      --section-alt: #e1f5fe;
     }
+    * { box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
       color: var(--dark);
       background-color: var(--bg-light);
+      margin: 0; padding: 0;
     }
     header {
-      background: linear-gradient(135deg, var(--primary), #0056c1);
-      color: #fff;
-      padding: 100px 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--light);
+      padding: 80px 20px;
       text-align: center;
     }
-    .logo-primary { width: 180px; margin-bottom: 20px; }
-    .btn-custom { border-radius: 50px; padding: 10px 25px; font-weight: 600; }
+    .logo-primary { width: 150px; margin-bottom: 20px; }
+    .btn-custom { border-radius: 50px; padding: 12px 30px; font-weight: 600; }
+    .btn-custom + .btn-custom { margin-left: 10px; }
     section { padding: 60px 20px; }
-    .service-card, .step-card {
-      background: #fff;
-      border-radius: 10px;
+    .section-color { background: var(--light); }
+    .section-alt { background: var(--section-alt); }
+    h2 { font-weight: 600; margin-bottom: 20px; }
+    p { line-height: 1.6; }
+    .card-custom {
+      background: var(--light);
+      border: none;
+      border-radius: 12px;
       padding: 30px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       transition: transform 0.3s;
+      text-align: center;
+      cursor: pointer;
     }
-    .service-card:hover, .step-card:hover { transform: translateY(-10px); }
-    .testimonial-img { width: 120px; border-radius: 50%; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-    footer { background: var(--dark); color: #fff; padding: 40px 20px; }
-    footer a { color: #fff; text-decoration: none; }
-    @media (max-width: 768px) {
-      header { padding: 60px 10px; }
-      .logo-primary { width: 120px; }
+    .card-custom:hover { transform: translateY(-5px); }
+    @media (max-width: 576px) {
+      .btn-custom { display: block; width: 100%; margin: 10px auto; }
+      .row.g-4 > [class*='col-'] { flex: 1 1 100%; }
     }
+    .testimonial-section { background: #fff; text-align: center; }
+    .testimonial-img { width: 100px; border-radius: 50%; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    footer { background: var(--dark); color: var(--light); padding: 40px 20px; text-align: center; }
+    footer a { color: var(--light); text-decoration: none; }
+    .small-muted { color: #bbb; font-size: 0.9rem; }
   </style>
 </head>
 <body>
 
 <header class="animate__animated animate__fadeIn">
   <img src="assets/img/logo-primary.png" alt="ShopperNerds" class="logo-primary">
-  <h1 class="mb-3">Trade Marketing, Ventas y Branding para tu PYME</h1>
-  <p class="mb-4">Conecta con expertos reales en marketing y ventas que llevarán tu negocio al siguiente nivel.</p>
-  <a href="#" class="btn btn-light btn-custom me-2" data-form="empresas">Solicitar Asesoría</a>
-  <a href="#" class="btn btn-outline-light btn-custom" data-form="expertos">Únete como Experto</a>
+  <h1>Trade Marketing, Ventas y Branding para tu PYME</h1>
+  <p>Conecta con <strong>expertos reales</strong> en marketing y ventas que llevarán tu negocio al <em>siguiente nivel</em>.</p>
+  <a href="#" class="btn btn-light btn-custom animate__animated animate__pulse" data-form="empresas">📋 Solicitar Asesoría</a>
+  <a href="#" class="btn btn-outline-light btn-custom animate__animated animate__pulse" data-form="expertos">🤓 Únete como Experto</a>
 </header>
 
-<section class="text-center animate__animated animate__fadeInUp">
-  <div class="container">
-    <h2 class="mb-4">¿Qué es ShopperNerds?</h2>
-    <p>Somos un hub especializado en estrategias comerciales, ayudamos a las PYMES con asesoría experta en branding, trade marketing, ventas B2B y digitalización.</p>
+<section class="section-color animate__animated animate__fadeInUp">
+  <div class="container text-center">
+    <h2>🧠 ¿Qué es ShopperNerds?</h2>
+    <p>Somos un <strong>hub</strong> especializado en estrategias comerciales. Ayudamos a las PYMES con asesoría experta en <em>branding</em>, <em>trade marketing</em>, <strong>ventas B2B</strong> y digitalización.</p>
   </div>
 </section>
 
-<section class="bg-white animate__animated animate__fadeInUp">
-  <div class="container">
-    <h2 class="text-center mb-4">¿Cómo funciona?</h2>
+<section class="section-alt animate__animated animate__fadeInUp">
+  <div class="container text-center">
+    <h2>✅ ¿Cómo funciona?</h2>
     <div class="row g-4 justify-content-center">
-      <div class="col-md-3">
-        <div class="step-card">
-          <h4>1. Completa el formulario</h4>
-          <p>Cuéntanos qué necesitas, sin compromiso.</p>
+      <div class="col-md-4">
+        <div class="card-custom">
+          <h4>1. Completa el formulario 📝</h4>
+          <p>Déjanos tus datos y un breve briefing de tu desafío; nuestra plataforma selecciona automáticamente al experto ideal para tu industria.</p>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="step-card">
-          <h4>2. Contacto personalizado</h4>
-          <p>Te asesoramos y definimos juntos tu proyecto.</p>
+      <div class="col-md-4">
+        <div class="card-custom">
+          <h4>2. Contacto personalizado 📞</h4>
+          <p>Recibe una llamada o correo de nuestro equipo para profundizar en tus objetivos y diseñar una estrategia ajustada a tu presupuesto.</p>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="step-card">
-          <h4>3. Resultados tangibles</h4>
-          <p>Implementamos estrategias que generen impacto real.</p>
+      <div class="col-md-4">
+        <div class="card-custom">
+          <h4>3. Implementación & Seguimiento 🚀</h4>
+          <p>El experto asignado trabaja contigo para ejecutar el plan, con reportes periódicos y métricas claras que demuestran el impacto real.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="animate__animated animate__fadeInUp">
+<!-- Servicios Destacados con despliegue -->
+<section class="section-color animate__animated animate__fadeInUp">
   <div class="container">
-    <h2 class="text-center mb-5">Servicios Destacados</h2>
+    <h2 class="text-center">📈 Servicios Destacados</h2>
     <div class="row g-4 justify-content-center">
-      <div class="col-md-4">
-        <div class="service-card">Trade Marketing y Ejecución PDV</div>
+      <div class="col-md-3">
+        <div class="card-custom" data-bs-toggle="collapse" data-bs-target="#desc1" aria-expanded="false">
+          🚀 Trade Marketing y PDV
+        </div>
+        <div class="collapse" id="desc1">
+          <div class="card card-body mt-2">
+            Implementamos estrategias de trade marketing en punto de venta para maximizar la visibilidad y conversión de tus productos.
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <div class="service-card">Branding Estratégico</div>
+      <div class="col-md-3">
+        <div class="card-custom" data-bs-toggle="collapse" data-bs-target="#desc2" aria-expanded="false">
+          🎨 Branding Estratégico
+        </div>
+        <div class="collapse" id="desc2">
+          <div class="card card-body mt-2">
+            Diseñamos y fortalecemos la identidad de tu marca para conectar emocionalmente con tus clientes.
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <div class="service-card">Ventas B2B y Canal Tradicional</div>
+      <div class="col-md-3">
+        <div class="card-custom" data-bs-toggle="collapse" data-bs-target="#desc3" aria-expanded="false">
+          💼 Ventas B2B y Canal Tradicional
+        </div>
+        <div class="collapse" id="desc3">
+          <div class="card card-body mt-2">
+            Desarrollamos estrategias de ventas B2B y gestión de canales tradicionales para expandir tu red de clientes.
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <div class="service-card">Ecommerce y Marketing Digital</div>
+      <div class="col-md-3">
+        <div class="card-custom" data-bs-toggle="collapse" data-bs-target="#desc4" aria-expanded="false">
+          🛒 Ecommerce & Marketing Digital
+        </div>
+        <div class="collapse" id="desc4">
+          <div class="card card-body mt-2">
+            Creamos y optimizamos tu tienda online y campañas digitales para incrementar tus ventas por internet.
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <div class="service-card">Shopper Insights & Data</div>
+      <div class="col-md-3">
+        <div class="card-custom" data-bs-toggle="collapse" data-bs-target="#desc5" aria-expanded="false">
+          📊 Shopper Insights & Analytics
+        </div>
+        <div class="collapse" id="desc5">
+          <div class="card card-body mt-2">
+            Analizamos datos de comportamiento del consumidor para tomar decisiones informadas y efectivas.
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="bg-white text-center animate__animated animate__fadeInUp">
+<!-- Garantía de Satisfacción -->
+<section class="section-alt animate__animated animate__fadeInUp">
+  <div class="container text-center">
+    <h2>🛡️ Garantía de Satisfacción Total</h2>
+    <p>Estamos tan seguros de la calidad de nuestro servicio que ofrecemos <strong>devolución completa</strong> si no quedas 100% satisfecho con los resultados. ¡Tu éxito es nuestra prioridad!</p>
+  </div>
+</section>
+
+<section class="testimonial-section animate__animated animate__fadeInUp">
   <div class="container">
-    <img src="assets/img/testimonio-jorge-galvez.jpg" alt="Jorge Gálvez" class="testimonial-img mb-3">
-    <blockquote class="fs-5 fst-italic">
-      "Después de años en grandes marcas, vi que las PYMES también merecen estrategias de alto nivel. Por eso fundé ShopperNerds."
+    <img src="assets/img/testimonio-jorge-galvez.jpg" alt="Jorge Gálvez" class="testimonial-img">
+    <blockquote class="fs-5 fst-italic mb-4">
+      “Después de más de 10 años liderando proyectos de **trade marketing** y **branding** para multinacionales, decidí crear ShopperNerds para ofrecer esa misma calidad estratégica a las PYMES. Mi misión es democratizar el conocimiento corporativo y ayudar a emprendedores a lograr resultados medibles.”
     </blockquote>
-    <p><strong>Jorge Gálvez, Fundador</strong></p>
+    <p><strong>— Jorge Gálvez, Fundador & CEO</strong></p>
   </div>
 </section>
 
-<footer class="text-center animate__animated animate__fadeIn">
+<footer class="animate__animated animate__fadeIn">
   <p>📍 Contacto y redes:</p>
-  <p>Email: <a href="mailto:jorge@shoppernerds.com">jorge@shoppernerds.com</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/jorgegalvezo/">Jorge Gálvez</a></p>
+  <p>📧 <a href="mailto:jorge@shoppernerds.com">jorge@shoppernerds.com</a> | 🔗 <a href="https://www.linkedin.com/in/jorgegalvezo/">LinkedIn</a></p>
+  <p class="small-muted mt-3">© 2025 ShopperNerds. Todos los derechos reservados.</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
