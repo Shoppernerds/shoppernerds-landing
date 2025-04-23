@@ -38,27 +38,58 @@
     footer img { width: 120px; margin-bottom: 15px; }
     footer .btn-custom { margin: 10px 0; }
     .small-muted { color: #bbb; font-size: .9rem; margin-top: 15px; }
-    #form-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 1000; }
-    .overlay-content { background: var(--light); border-radius: 8px; width: 90%; max-width: 600px; max-height: 90%; overflow: auto; position: relative; padding: 20px; }
-    .close-btn { position: absolute; top: 10px; right: 15px; background: var(--primary); color: var(--light); border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; }
-    @media(max-width:576px) { header { padding: 60px 10px; } header h1 { font-size: 2rem; } .btn-custom { width: 90%; max-width: 300px; margin: 10px auto; } }
+
+    /* Form Overlay */
+    #form-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 1000; padding: 20px; }
+    .overlay-content { background: var(--light); border-radius: 12px; width: 90%; max-width: 600px; max-height: 90vh; overflow: auto; position: relative; padding: 20px; }
+    .overlay-content h4 { margin-bottom: 1.5rem; }
+    .close-btn { position: absolute; top: 10px; right: 15px; background: var(--primary); color: var(--light); border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 18px; cursor: pointer; }
+    .overlay-content iframe { width: 100%; height: 700px; border: none; border-radius: 12px; }
+
+    /* Mobile Adjustments */
+    @media(max-width:576px) {
+      header { padding: 60px 10px; }
+      header h1 { font-size: 2rem; }
+      .btn-custom { width: 90%; max-width: 300px; margin: 10px auto; display: block; }
+      .overlay-content { width: 100%; max-width: none; padding: 12px; max-height: 100vh; border-radius: 0; }
+      .overlay-content iframe { height: calc(100vh - 120px); }
+      .close-btn { top: 16px; right: 16px; width: 40px; height: 40px; font-size: 1.5rem; }
+    }
   </style>
 </head>
 <body>
-<header class="animate__animated animate__fadeIn">
-  <h1>Haz crecer tu PYME con estrategias de Trade, Ventas y Branding que marcan la diferencia</h1>
-  <p style="margin-bottom: 24px;">Conecta con expertos que han impulsado a marcas líderes del mercado. Lleva tu negocio al siguiente nivel.</p>
-  <a href="#" class="btn btn-light btn-custom animate__animated animate__pulse" data-form="empresas" style="margin-top: 16px;">📋 Primera Asesoría de Diagnóstico Gratis</a>
-</header>
+  <header class="animate__animated animate__fadeIn">
+    <h1>Haz crecer tu PYME con estrategias de Trade, Ventas y Branding que marcan la diferencia</h1>
+    <p style="margin-bottom: 24px;">Conecta con expertos que han impulsado a marcas líderes del mercado. Lleva tu negocio al siguiente nivel.</p>
+    <a href="#" class="btn btn-light btn-custom animate__animated animate__pulse" data-form="empresas" style="margin-top: 16px;">📋 Primera Asesoría de Diagnóstico Gratis</a>
+  </header>
 
   <!-- Cómo Funciona -->
   <section id="como-funciona" class="section-alt animate__animated animate__fadeInUp">
     <div class="container text-center">
       <h2>✅ Cómo funciona</h2>
       <div class="row g-4 justify-content-center">
-        <div class="col-md-4"><div class="service-card"><div class="service-icon">📝</div><h5>Completa el Formulario</h5><p>Déjanos tus datos y un briefing para entender tus necesidades.</p></div></div>
-        <div class="col-md-4"><div class="service-card"><div class="service-icon">🔍</div><h5>Contacto Personalizado</h5><p>Te conectamos con el experto ideal según industria y canal.</p></div></div>
-        <div class="col-md-4"><div class="service-card"><div class="service-icon">🚀</div><h5>Asesoría de Impacto</h5><p>Inicias tu proyecto con reportes y resultados medibles.</p></div></div>
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon">📝</div>
+            <h5>Completa el Formulario</h5>
+            <p>Déjanos tus datos y un briefing para entender tus necesidades.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon">🔍</div>
+            <h5>Contacto Personalizado</h5>
+            <p>Te conectamos con el experto ideal según industria y canal.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon">🚀</div>
+            <h5>Asesoría de Impacto</h5>
+            <p>Inicias tu proyecto con reportes y resultados medibles.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -68,14 +99,62 @@
     <div class="container">
       <h2>📈 Servicios Destacados</h2>
       <div class="row g-4">
-        <div class="col-sm-6 col-md-4 col-lg-3"><div class="service-card"><div class="service-icon">🎯</div><h5>Trade Marketing</h5><p>Maximiza presencia y ventas en PDV.</p></div></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><div class="service-card"><div class="service-icon">🎨</div><h5>Marketing Estratégico</h5><p>Plan integral para impulsar tu marca.</p></div></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><div class="service-card"><div class="service-icon">📈</div><h5>Ventas B2B</h5><p>Estrategias B2B y CRM para crecer.</p></div></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><div class="service-card"><div class="service-icon">🛍️</div><h5>Ventas B2C</h5><p>Incrementa ventas y fideliza clientes.</p></div></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><div class="service-card"><div class="service-icon">🛒</div><h5>Ventas Ecommerce</h5><p>Optimiza campañas digitales y e-commerce.</p></div></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><div class="service-card"><div class="service-icon">📊</div><h5>Data & Analytics</h5><p>Decisiones informadas con KPIs.</p></div></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><div class="service-card"><div class="service-icon">🏢</div><h5>Stands & Showrooms</h5><p>Diseño y montaje para exposiciones.</p></div></div>
-        <div class="col-sm-6 col-md-4 col-lg-3"><div class="service-card"><div class="service-icon">🔍</div><h5>Proveedores & Talentos</h5><p>Conecta con proveedores y expertos.</p></div></div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="service-card">
+            <div class="service-icon">🎯</div>
+            <h5>Trade Marketing</h5>
+            <p>Maximiza presencia y ventas en PDV.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h5>Marketing Estratégico</h5>
+            <p>Plan integral para impulsar tu marca.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="service-card">
+            <div class="service-icon">📈</div>
+            <h5>Ventas B2B</h5>
+            <p>Estrategias B2B y CRM para crecer.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="service-card">
+            <div class="service-icon">🛍️</div>
+            <h5>Ventas B2C</h5>
+            <p>Incrementa ventas y fideliza clientes.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="service-card">
+            <div class="service-icon">🛒</div>
+            <h5>Ventas Ecommerce</h5>
+            <p>Optimiza campañas digitales y e-commerce.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h5>Data & Analytics</h5>
+            <p>Decisiones informadas con KPIs.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="service-card">
+            <div class="service-icon">🏢</div>
+            <h5>Stands & Showrooms</h5>
+            <p>Diseño y montaje para exposiciones.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="service-card">
+            <div class="service-icon">🔍</div>
+            <h5>Proveedores & Talentos</h5>
+            <p>Conecta con proveedores y expertos.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -120,36 +199,26 @@
         document.getElementById('overlay-expertos').style.display = form === 'expertos' ? 'block' : 'none';
       });
     });
-    document.querySelector('.close-btn').addEventListener('click', () => {
-      document.getElementById('form-overlay').style.display = 'none';
+    document.addEventListener('click', e => {
+      if (e.target.classList.contains('close-btn')) {
+        document.getElementById('form-overlay').style.display = 'none';
+      }
     });
   </script>
-</body>
-<div id="form-overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);display:none;justify-content:center;align-items:center;z-index:1050;padding:20px;">
-  <div class="overlay-content" style="background:white;padding:40px;border-radius:20px;max-width:960px;width:100%;max-height:90vh;overflow:auto;box-shadow:0 0 40px rgba(0,0,0,0.4);position:relative;">
-    <button class="close-btn" style="position:absolute;top:10px;right:15px;background:#007BFF;color:#fff;border:none;border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer;">×</button>
-    <div id="overlay-empresas" style="display:none;">
-      <div style="margin-bottom:20px;text-align:center;"><h4>Formulario para Empresas</h4></div>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" width="100%" height="1200" frameborder="0" style="border:none;border-radius:12px;">Cargando…</iframe>
-    </div>
-    <div id="overlay-expertos" style="display:none;">
-      <div style="margin-bottom:20px;text-align:center;"><h4>Formulario para Expertos</h4></div>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1ootbWAUN09vI5x_p-yy9U-XbODmdEJHwxANy6mwN0beMEg/viewform?embedded=true" width="100%" height="1100" frameborder="0" style="border:none;border-radius:12px;">Cargando…</iframe>
+
+  <!-- Overlay -->
+  <div id="form-overlay">
+    <div class="overlay-content">
+      <button class="close-btn">×</button>
+      <div id="overlay-empresas" style="display:none;">
+        <h4>Formulario para Empresas</h4>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true"></iframe>
+      </div>
+      <div id="overlay-expertos" style="display:none;">
+        <h4>Formulario para Expertos</h4>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1ootbWAUN09vI5x_p-yy9U-XbODmdEJHwxANy6mwN0beMEg/viewform?embedded=true"></iframe>
+      </div>
     </div>
   </div>
-</div>
-
-<script>
-  document.querySelectorAll('[data-form]').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const form = btn.getAttribute('data-form');
-      document.getElementById('form-overlay').style.display = 'flex';
-      document.getElementById('overlay-empresas').style.display = form === 'empresas' ? 'block' : 'none';
-      document.getElementById('overlay-expertos').style.display = form === 'expertos' ? 'block' : 'none';
-    });
-  });
-  document.querySelector('.close-btn').addEventListener('click', () => {
-    document.getElementById('form-overlay').style.display = 'none';
-  });
-</script>
+</body>
+</html>
