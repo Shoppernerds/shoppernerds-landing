@@ -43,21 +43,29 @@
     .section-color { background: var(--light); }
     h2 { font-weight: 600; font-size: 2rem; margin-bottom: 20px; text-align: center; }
     p { line-height: 1.6; font-size: 1rem; }
-    .service-card {
+    /* Estilos para acordeón desplegable */
+    .accordion-button {
+      border: none;
       background: var(--light);
-      padding: 30px;
-      border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      padding: 1rem;
       transition: transform var(--transition-time), box-shadow var(--transition-time);
-      text-align: center;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100%;
     }
-    .service-card:hover { transform: translateY(-5px); }
-    .service-icon { font-size: 3rem; margin-bottom: 15px; }
+    .accordion-button.collapsed:hover {
+      transform: translateY(-3px);
+    }
+    .accordion-button::after { display: none; }
+    .service-icon { font-size: 1.75rem; margin-right: 0.75rem; }
+    .accordion-body {
+      padding: 1rem 1.5rem 1.5rem;
+      background: var(--light);
+      margin-bottom: 1rem;
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
     .guarantee-card {
       background: var(--light);
       border: 2px solid var(--primary);
@@ -108,59 +116,135 @@
 </head>
 <body>
   <header class="animate__animated animate__fadeIn">
-    <h1>Haz crecer tu PYME con estrategias de Trade, Ventas y Branding que marcan la diferencia</h1>
-    <p>Conecta con expertos que han impulsado a marcas líderes del mercado. Lleva tu negocio al siguiente nivel.</p>
-    <!-- Botón principal abre formulario en nueva pestaña -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" target="_blank" rel="noopener" class="btn btn-light btn-custom animate__animated animate__pulse">
+    <h1>HAZ CRECER TU PYME</h1>
+    <h1>CON ESTRATEGIAS QUE MARCAN LA DIFERENCIA</h1>
+    <p>Conecta con expertos que han impulsado grandes marcas.</p>
+    <p>y lleva tu negocio al siguiente nivel 🚀</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true"
+       target="_blank" rel="noopener"
+       class="btn btn-light btn-custom animate__animated animate__pulse">
       📋 Primera Asesoría de Diagnóstico Gratis
     </a>
   </header>
 
-  <!-- Cómo Funciona -->
   <section id="como-funciona" class="section-alt animate__animated animate__fadeInUp">
     <div class="container text-center">
       <h2>✅ Cómo funciona</h2>
       <div class="row g-4 justify-content-center">
         <div class="col-md-4">
-          <div class="service-card"><div class="service-icon">📝</div><h5>Completa el Formulario</h5><p>Déjanos tus datos y un briefing para entender tus necesidades.</p></div>
+          <div class="service-card">
+            <div class="service-icon">📝</div>
+            <h5>Completa el Formulario</h5>
+            <p>Déjanos tus datos y un briefing para entender tus necesidades.</p>
+          </div>
         </div>
         <div class="col-md-4">
-          <div class="service-card"><div class="service-icon">🔍</div><h5>Contacto Personalizado</h5><p>Te conectamos con el experto ideal según industria y canal.</p></div>
+          <div class="service-card">
+            <div class="service-icon">🔍</div>
+            <h5>Contacto Personalizado</h5>
+            <p>Te conectamos con el experto ideal según industria y canal.</p>
+          </div>
         </div>
         <div class="col-md-4">
-          <div class="service-card"><div class="service-icon">🚀</div><h5>Asesoría de Impacto</h5><p>Inicias tu proyecto con reportes y resultados medibles.</p></div>
+          <div class="service-card">
+            <div class="service-icon">🚀</div>
+            <h5>Asesoría de Impacto</h5>
+            <p>Inicias tu proyecto con reportes y resultados medibles.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Servicios Destacados -->
   <section id="servicios" class="section-color animate__animated animate__fadeInUp">
     <div class="container">
       <h2>📈 Servicios Destacados</h2>
-      <div class="row g-4">
-        <div class="col-sm-6 col-lg-3"><div class="service-card"><div class="service-icon">📊</div><h5>Estrategia de Trade Marketing</h5><p>Diseño de planes de acción para impulsar tu marca en PDV.</p></div></div>
-        <div class="col-sm-6 col-lg-3"><div class="service-card"><div class="service-icon">🛒</div><h5>Ejecución en Punto de Venta</h5><p>Implementación y supervisión de materiales POP y promociones.</p></div></div>
-        <div class="col-sm-6 col-lg-3"><div class="service-card"><div class="service-icon">🎨</div><h5>Diseño de Material POP</h5><p>Creatividad y diseño gráfico para destacar tu oferta.</p></div></div>
-        <div class="col-sm-6 col-lg-3"><div class="service-card"><div class="service-icon">📈</div><h5>Optimización de Layout</h5><p>Planogramas y distribución óptima para maximizar ventas.</p></div></div>
-        <div class="col-sm-6 col-lg-3"><div class="service-card"><div class="service-icon">📋</div><h5>Gestión de Proyectos</h5><p>Coordinación integral de producción, validación e instalación.</p></div></div>
-        <div class="col-sm-6 col-lg-3"><div class="service-card"><div class="service-icon">📐</div><h5>Analítica de Ventas</h5><p>Reportes y análisis para tomar decisiones basadas en datos.</p></div></div>
-        <div class="col-sm-6 col-lg-3"><div class="service-card"><div class="service-icon">🎓</div><h5>Capacitación de Equipos</h5><p>Formación especializada en trade marketing y ventas.</p></div></div>
-        <div class="col-sm-6 col-lg-3"><div class="service-card"><div class="service-icon">🔧</div><h5>Optimización de Procesos</h5><p>Eficiencias operativas para reducir tiempos y costos.</p></div></div>
+      <div class="accordion" id="accordionServicios">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="false" aria-controls="collapseOne">
+              <div class="service-icon">🎯</div>
+              <span><strong>Estrategia de Trade Marketing</strong></span>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse"
+               aria-labelledby="headingOne" data-bs-parent="#accordionServicios">
+            <div class="accordion-body">
+              <p>Diseño de planes tácticos para aumentar visibilidad y ventas en el punto de venta físico o digital.</p>
+              <p>→ Enfocado en almacenes, minimarkets y tiendas que quieren destacar frente a la competencia.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
+              <div class="service-icon">🏬</div>
+              <span><strong>Optimización de Layout / Exhibición</strong></span>
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse"
+               aria-labelledby="headingTwo" data-bs-parent="#accordionServicios">
+            <div class="accordion-body">
+              <p>Asesoría sobre cómo organizar productos y mobiliario para mejorar la experiencia de compra y vender más.</p>
+              <p>→ Aplicable a locales físicos de cualquier rubro.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                    aria-expanded="false" aria-controls="collapseThree">
+              <div class="service-icon">📊</div>
+              <span><strong>Analítica de Ventas</strong></span>
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse"
+               aria-labelledby="headingThree" data-bs-parent="#accordionServicios">
+            <div class="accordion-body">
+              <p>Revisión de datos de ventas para detectar patrones y oportunidades.</p>
+              <p>→ Ideal para tomar decisiones concretas sin perder tiempo ni dinero.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                    aria-expanded="false" aria-controls="collapseFour">
+              <div class="service-icon">🌐</div>
+              <span><strong>Marketing Digital y Ecommerce</strong></span>
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse"
+               aria-labelledby="headingFour" data-bs-parent="#accordionServicios">
+            <div class="accordion-body">
+              <p>Estrategia para potenciar tu presencia online y montar tu primer canal de ecommerce.</p>
+              <p>→ Ideal para quienes están partiendo o quieren escalar su negocio digitalmente sin depender de agencias.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Garantía -->
   <section class="section-alt animate__animated animate__fadeInUp">
     <div class="guarantee-card animate__animated animate__fadeInDown">
       <h2>🛡️ Garantía de Éxito Total</h2>
-      <p>Si no ves resultados claros en 30 días, te devolvemos tu inversión.</p>
+      <p>Si no quedas conforme con la asesoría de nuestro profesional, te devolvemos el 100% de tu dinero</p>
       <a href="#" class="btn btn-primary btn-custom">¡Lo Quiero!</a>
     </div>
   </section>
 
-  <!-- Testimonio -->
   <section id="testimonio" class="testimonial-section animate__animated animate__fadeInUp">
     <div class="container testimonial-content">
       <img src="assets/img/testimonio-jorge-galvez.jpg" alt="Jorge Gálvez" class="testimonial-img">
@@ -171,13 +255,14 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="animate__animated animate__fadeIn">
     <img src="assets/img/logo-primary.png" alt="ShopperNerds">
     <p>📍 Contacto y redes:</p>
     <p>📧 <a href="mailto:jorge@shoppernerds.com">jorge@shoppernerds.com</a> | 🔗 <a href="https://www.linkedin.com/in/jorgegalvezo/">LinkedIn</a></p>
     <div class="d-flex justify-content-center mt-3">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1ootbWAUN09vI5x_p-yy9U-XbODmdEJHwxANy6mwN0beMEg/viewform?embedded=true" target="_blank" rel="noopener" class="btn btn-outline-light btn-custom">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1ootbWAUN09vI5x_p-yy9U-XbODmdEJHwxANy6mwN0beMEg/viewform?embedded=true"
+         target="_blank" rel="noopener"
+         class="btn btn-outline-light btn-custom">
         🤓 Únete como Experto
       </a>
     </div>
@@ -187,3 +272,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
