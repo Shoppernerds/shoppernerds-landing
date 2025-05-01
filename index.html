@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ShopperNerds | Expertos en Trade Marketing para PYMES</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     :root {
       --primary: #007BFF;
@@ -18,139 +18,79 @@
       --transition-time: 0.3s;
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; padding: 0; font-family: 'Poppins', sans-serif; color: var(--dark); background: var(--bg-light); }
+    body { margin: 0; font-family: 'Poppins', sans-serif; color: var(--dark); background: var(--bg-light); }
     a { text-decoration: none; }
-    header {
-      background: var(--primary);
-      color: var(--light);
-      text-align: center;
-      padding: 80px 20px;
-    }
-    header h1 { font-size: 2.5rem; margin-bottom: 30px; }
-    header p { font-size: 1.125rem; margin-bottom: 30px; max-width: 600px; margin: auto; }
-    header .btn-custom { margin-top: 30px; }
-    .btn-custom {
-      border-radius: 50px;
-      padding: 14px 32px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: transform var(--transition-time), box-shadow var(--transition-time);
-    }
+    header { background: var(--primary); color: var(--light); display: flex; align-items: center; justify-content: center; text-align: center; min-height: 70vh; padding: 60px 20px; }
+    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    header h2 { font-size: 1.5rem; font-weight: 400; margin-bottom: 20px; }
+    header p.lead { font-size: 1.125rem; margin-bottom: 10px; }
+    .btn-custom { border-radius: 50px; padding: 14px 32px; font-weight: 600; font-size: 1rem; transition: transform var(--transition-time), box-shadow var(--transition-time); }
     .btn-custom:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
     section { padding: 80px 20px; }
     .section-alt { background: var(--section-alt); }
     .section-color { background: var(--light); }
-    h2 { font-weight: 600; font-size: 2rem; margin-bottom: 20px; text-align: center; }
-    p { line-height: 1.6; font-size: 1rem; }
-    /* Estilos para acordeón desplegable */
-    .accordion-button {
-      border: none;
-      background: var(--light);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      border-radius: 12px;
-      padding: 1rem;
-      transition: transform var(--transition-time), box-shadow var(--transition-time);
-      display: flex;
-      align-items: center;
-    }
-    .accordion-button.collapsed:hover {
-      transform: translateY(-3px);
-    }
-    .accordion-button::after { display: none; }
-    .service-icon { font-size: 1.75rem; margin-right: 0.75rem; }
-    .accordion-body {
-      padding: 1rem 1.5rem 1.5rem;
-      background: var(--light);
-      margin-bottom: 1rem;
-      border-radius: 0 0 12px 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-    .guarantee-card {
-      background: var(--light);
-      border: 2px solid var(--primary);
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      margin: 40px auto;
-      max-width: 600px;
-      text-align: center;
-    }
+    h2 { font-weight: 600; font-size: 2rem; margin-bottom: 40px; text-align: center; }
+    /* Cómo funciona boxes */
+    .how-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 2rem; }
+    .how-card { background: var(--light); border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); padding: 2rem 1.5rem; text-align: center; transition: transform var(--transition-time), box-shadow var(--transition-time); }
+    .how-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+    .how-icon { font-size: 2rem; margin-bottom: 1rem; color: var(--primary); }
+    .how-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; }
+    .how-desc { font-size: 1rem; line-height: 1.5; color: var(--dark); }
+    /* Servicios Destacados Grid */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 2rem; }
+    .service-card { position: relative; background: var(--light); border-radius: 12px; padding: 2rem 1.5rem; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-top: 4px solid var(--primary); transition: transform var(--transition-time), box-shadow var(--transition-time); }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+    .icon-container { width: 60px; height: 60px; background: var(--primary); color: var(--light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem; }
+    .service-card h5 { font-size: 1.125rem; margin-bottom: 1rem; font-weight: 600; text-align: center; }
+    .overlay { position: absolute; bottom: 0; left: 0; right: 0; background: var(--secondary); color: var(--light); padding: 1.5rem; transform: translateY(100%); transition: transform var(--transition-time); }
+    .service-card:hover .overlay { transform: translateY(0); }
+    .overlay p { margin: 0; font-size: 0.95rem; line-height: 1.4; text-align: center; }
+    /* Garantía y Testimonio */
+    .guarantee-card { background: var(--light); border: 2px solid var(--primary); border-radius: 12px; padding: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); margin: 40px auto; max-width: 600px; text-align: center; }
     .testimonial-section { background: var(--light); padding: 80px 20px; }
-    .testimonial-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    @media(min-width: 992px) {
-      .testimonial-content { flex-direction: row; align-items: flex-start; gap: 2rem; }
-    }
-    .testimonial-img {
-      width: 100%; max-width: 400px;
-      object-fit: cover;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      border-radius: 12px;
-    }
-    .testimonial-text {
-      background: var(--section-alt);
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      text-align: left;
-    }
+    .testimonial-content { display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 900px; margin: auto; }
+    @media(min-width: 992px) { .testimonial-content { flex-direction: column; } }
+    .testimonial-img { width: 100%; max-width: 400px; object-fit: cover; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-radius: 12px; }
+    .testimonial-text { background: var(--section-alt); padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); text-align: left; }
     .testimonial-quote { font-size: 1.25rem; margin-bottom: 15px; }
     .testimonial-author { font-weight: 600; text-align: right; font-size: 1rem; }
     footer { background: var(--dark); color: var(--light); padding: 40px 20px; }
     footer img { display: block; margin: 0 auto 15px; width: 120px; }
-    footer p { text-align: center; margin: 5px 0; }
+    footer p, footer a { text-align: center; margin: 5px 0; color: var(--light); }
     .small-muted { color: #bbb; font-size: .9rem; margin-top: 15px; text-align: center; }
-    @media(max-width:576px) {
-      header { padding: 60px 10px; }
-      header h1 { font-size: 2rem; }
-      header .btn-custom { width: 90%; max-width: 300px; margin: 10px auto; display: block; }
-    }
+    @media(max-width:576px) { header { padding: 60px 10px; } header h1 { font-size: 2rem; } }
   </style>
 </head>
 <body>
   <header class="animate__animated animate__fadeIn">
-    <h1>HAZ CRECER TU PYME</h1>
-    <h1>CON ESTRATEGIAS QUE MARCAN LA DIFERENCIA</h1>
-    <p>Conecta con expertos que han impulsado grandes marcas.</p>
-    <p>y lleva tu negocio al siguiente nivel 🚀</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true"
-       target="_blank" rel="noopener"
-       class="btn btn-light btn-custom animate__animated animate__pulse">
-      📋 Primera Asesoría de Diagnóstico Gratis
-    </a>
+    <div class="container">
+      <h1 class="mb-3">HAZ CRECER TU PYME</h1>
+      <h2>CON ESTRATEGIAS QUE MARCAN LA DIFERENCIA</h2>
+      <p class="lead mb-2">Conecta con expertos que han impulsado grandes marcas.</p>
+      <p class="mb-4">Y lleva tu negocio al siguiente nivel 🚀</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" target="_blank" rel="noopener" class="btn btn-light btn-custom animate__animated animate__pulse">📋 Primera Asesoría de Diagnóstico Gratis</a>
+    </div>
   </header>
 
   <section id="como-funciona" class="section-alt animate__animated animate__fadeInUp">
-    <div class="container text-center">
+    <div class="container">
       <h2>✅ Cómo funciona</h2>
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-4">
-          <div class="service-card">
-            <div class="service-icon">📝</div>
-            <h5>Completa el Formulario</h5>
-            <p>Déjanos tus datos y un briefing para entender tus necesidades.</p>
-          </div>
+      <div class="how-grid">
+        <div class="how-card animate__animated animate__fadeInUp">
+          <div class="how-icon">📝</div>
+          <div class="how-title">Completa el Formulario</div>
+          <div class="how-desc">Déjanos tus datos y un briefing para entender tus necesidades.</div>
         </div>
-        <div class="col-md-4">
-          <div class="service-card">
-            <div class="service-icon">🔍</div>
-            <h5>Contacto Personalizado</h5>
-            <p>Te conectamos con el experto ideal según industria y canal.</p>
-          </div>
+        <div class="how-card animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="how-icon">🔍</div>
+          <div class="how-title">Contacto Personalizado</div>
+          <div class="how-desc">Te conectamos con el experto ideal según industria y canal.</div>
         </div>
-        <div class="col-md-4">
-          <div class="service-card">
-            <div class="service-icon">🚀</div>
-            <h5>Asesoría de Impacto</h5>
-            <p>Inicias tu proyecto con reportes y resultados medibles.</p>
-          </div>
+        <div class="how-card animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="how-icon">🚀</div>
+          <div class="how-title">Asesoría de Impacto</div>
+          <div class="how-desc">Inicias tu proyecto con reportes y resultados medibles.</div>
         </div>
       </div>
     </div>
@@ -159,80 +99,22 @@
   <section id="servicios" class="section-color animate__animated animate__fadeInUp">
     <div class="container">
       <h2>📈 Servicios Destacados</h2>
-      <div class="accordion" id="accordionServicios">
-
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button collapsed" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="false" aria-controls="collapseOne">
-              <div class="service-icon">🎯</div>
-              <span><strong>Estrategia de Trade Marketing</strong></span>
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse"
-               aria-labelledby="headingOne" data-bs-parent="#accordionServicios">
-            <div class="accordion-body">
-              <p>Diseño de planes tácticos para aumentar visibilidad y ventas en el punto de venta físico o digital.</p>
-              <p>→ Enfocado en almacenes, minimarkets y tiendas que quieren destacar frente a la competencia.</p>
-            </div>
-          </div>
+      <div class="services-grid">
+        <div class="service-card animate__animated animate__fadeInUp">
+          <div class="icon-container">🎯</div>
+          <h5>Estrategia de Trade Marketing</h5>
+          <div class="overlay"><p>Diseño de planes tácticos para aumentar visibilidad y ventas en el punto de venta físico o digital. Enfocado en almacenes, minimarkets y tiendas que quieren destacar.</p></div>
         </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                    aria-expanded="false" aria-controls="collapseTwo">
-              <div class="service-icon">🏬</div>
-              <span><strong>Optimización de Layout / Exhibición</strong></span>
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse"
-               aria-labelledby="headingTwo" data-bs-parent="#accordionServicios">
-            <div class="accordion-body">
-              <p>Asesoría sobre cómo organizar productos y mobiliario para mejorar la experiencia de compra y vender más.</p>
-              <p>→ Aplicable a locales físicos de cualquier rubro.</p>
-            </div>
-          </div>
+        <div class="service-card animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="icon-container">📊</div>
+          <h5>Analítica de Ventas</h5>
+          <div class="overlay"><p>Revisión de datos de ventas para detectar patrones y oportunidades. Ideal para tomar decisiones concretas sin perder tiempo ni dinero.</p></div>
         </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                    aria-expanded="false" aria-controls="collapseThree">
-              <div class="service-icon">📊</div>
-              <span><strong>Analítica de Ventas</strong></span>
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse"
-               aria-labelledby="headingThree" data-bs-parent="#accordionServicios">
-            <div class="accordion-body">
-              <p>Revisión de datos de ventas para detectar patrones y oportunidades.</p>
-              <p>→ Ideal para tomar decisiones concretas sin perder tiempo ni dinero.</p>
-            </div>
-          </div>
+        <div class="service-card animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="icon-container">🌐</div>
+          <h5>Marketing Digital &amp; Ecommerce</h5>
+          <div class="overlay"><p>Estrategias para potenciar tu presencia online y montar tu canal de ecommerce. Ideal para quienes desean escalar su negocio digitalmente sin depender de agencias.</p></div>
         </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFour">
-            <button class="accordion-button collapsed" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                    aria-expanded="false" aria-controls="collapseFour">
-              <div class="service-icon">🌐</div>
-              <span><strong>Marketing Digital y Ecommerce</strong></span>
-            </button>
-          </h2>
-          <div id="collapseFour" class="accordion-collapse collapse"
-               aria-labelledby="headingFour" data-bs-parent="#accordionServicios">
-            <div class="accordion-body">
-              <p>Estrategia para potenciar tu presencia online y montar tu primer canal de ecommerce.</p>
-              <p>→ Ideal para quienes están partiendo o quieren escalar su negocio digitalmente sin depender de agencias.</p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -240,31 +122,27 @@
   <section class="section-alt animate__animated animate__fadeInUp">
     <div class="guarantee-card animate__animated animate__fadeInDown">
       <h2>🛡️ Garantía de Éxito Total</h2>
-      <p>Si no quedas conforme con la asesoría de nuestro profesional, te devolvemos el 100% de tu dinero</p>
-      <a href="#" class="btn btn-primary btn-custom">¡Lo Quiero!</a>
+      <p>Si no quedas conforme con la asesoría de nuestro profesional, te devolvemos el 100% de tu dinero.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" class="btn btn-primary btn-custom">¡Lo Quiero!</a>
     </div>
   </section>
 
   <section id="testimonio" class="testimonial-section animate__animated animate__fadeInUp">
     <div class="container testimonial-content">
-      <img src="assets/img/testimonio-jorge-galvez.jpg" alt="Jorge Gálvez" class="testimonial-img">
+      <img src="assets/img/testimonio-jorge-galvez.jpg" alt="Jorge Gálvez" class="testimonial-img" />
       <div class="testimonial-text">
         <p class="testimonial-quote">Después de 10 años liderando proyectos de <strong>trade marketing</strong>, <strong>branding</strong> y <strong>ventas</strong> para grandes empresas, creé ShopperNerds para poner esa estrategia al alcance de las PYMES.</p>
-        <p class="testimonial-author">— Jorge Gálvez, Fundador & CEO</p>
+        <p class="testimonial-author">— Jorge Gálvez, Fundador &amp; CEO</p>
       </div>
     </div>
   </section>
 
   <footer class="animate__animated animate__fadeIn">
-    <img src="assets/img/logo-primary.png" alt="ShopperNerds">
+    <img src="assets/img/logo-primary.png" alt="ShopperNerds" />
     <p>📍 Contacto y redes:</p>
     <p>📧 <a href="mailto:jorge@shoppernerds.com">jorge@shoppernerds.com</a> | 🔗 <a href="https://www.linkedin.com/in/jorgegalvezo/">LinkedIn</a></p>
     <div class="d-flex justify-content-center mt-3">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1ootbWAUN09vI5x_p-yy9U-XbODmdEJHwxANy6mwN0beMEg/viewform?embedded=true"
-         target="_blank" rel="noopener"
-         class="btn btn-outline-light btn-custom">
-        🤓 Únete como Experto
-      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1ootbWAUN09vI5x_p-yy9U-XbODmdEJHwxANy6mwN0beMEg/viewform?embedded=true" target="_blank" rel="noopener" class="btn btn-outline-light btn-custom">🤓 Únete como Experto</a>
     </div>
     <p class="small-muted">© 2025 ShopperNerds. Todos los derechos reservados.</p>
   </footer>
@@ -272,5 +150,4 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
 
