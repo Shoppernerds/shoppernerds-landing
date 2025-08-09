@@ -2,162 +2,473 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShopperNerds | Expertos en Trade Marketing para PYMES</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShopperNerds | Trade Marketing, Ventas y Branding para PYMES</title>
+  <meta name="description" content="Impulsa tu PYME con estrategias de trade marketing, ventas y branding ejecutadas por expertos. Diagnóstico gratis. Garantía de satisfacción 100%." />
+  <link rel="canonical" href="https://shoppernerds.com/" />
+
+  <!-- Preconnect & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:site_name" content="ShopperNerds" />
+  <meta property="og:title" content="ShopperNerds | Expertos en Trade Marketing para PYMES" />
+  <meta property="og:description" content="Estrategia y ejecución para crecer ventas. Diagnóstico gratis + garantía 100%." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://shoppernerds.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/favicon.ico" />
+
   <style>
-    :root {
-      --primary: #007BFF;
-      --secondary: #0056c1;
-      --dark: #2C2C2C;
-      --light: #FFFFFF;
-      --bg-light: #F8F9FA;
-      --section-alt: #E1F5FE;
-      --transition-time: 0.3s;
+    :root{
+      --primary:#0B5FFF; /* Azul confiable */
+      --primary-600:#084dd0;
+      --secondary:#111827; /* Gris muy oscuro */
+      --accent:#22c55e; /* verde check */
+      --bg:#0b111f;      /* fondo hero */
+      --muted:#6b7280;
+      --light:#ffffff;
+      --card:#ffffff;
+      --section:#f6f8fb;
+      --radius:14px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
     }
-    *, *::before, *::after { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Poppins', sans-serif; color: var(--dark); background: var(--bg-light); }
-    a { text-decoration: none; }
-    header { background: var(--primary); color: var(--light); display: flex; align-items: center; justify-content: center; text-align: center; min-height: 70vh; padding: 60px 20px; }
-    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    header h2 { font-size: 1.5rem; font-weight: 400; margin-bottom: 20px; }
-    header p.lead { font-size: 1.125rem; margin-bottom: 10px; }
-    .btn-custom { border-radius: 50px; padding: 14px 32px; font-weight: 600; font-size: 1rem; transition: transform var(--transition-time), box-shadow var(--transition-time); }
-    .btn-custom:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-    section { padding: 80px 20px; }
-    .section-alt { background: var(--section-alt); }
-    .section-color { background: var(--light); }
-    h2 { font-weight: 600; font-size: 2rem; margin-bottom: 40px; text-align: center; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;color:var(--secondary);background:#fff}
 
-    /* Cómo funciona */
-    .how-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 2rem; }
-    .how-card { background: var(--light); border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); padding: 2rem 1.5rem; text-align: center; transition: transform var(--transition-time), box-shadow var(--transition-time); }
-    .how-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
-    .how-icon { font-size: 2rem; margin-bottom: 1rem; color: var(--primary); }
-    .how-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; }
-    .how-desc { font-size: 1rem; line-height: 1.5; color: var(--dark); }
+    /* NAV */
+    .navbar{--bs-navbar-padding-y:.8rem;background:#fff;border-bottom:1px solid #eef2f7}
+    .navbar.sticky{position:sticky;top:0;z-index:1030;backdrop-filter:saturate(180%) blur(8px)}
+    .btn-primary{background:var(--primary);border-color:var(--primary)}
+    .btn-primary:hover{background:var(--primary-600);border-color:var(--primary-600)}
+    .btn-outline-primary{border-color:var(--primary);color:var(--primary)}
+    .btn-outline-primary:hover{background:var(--primary);color:#fff}
+    .btn-pill{border-radius:999px;padding:.85rem 1.25rem;font-weight:600}
 
-    /* Servicios Destacados */
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 2rem; }
-    .service-card { background: var(--light); border-radius: 12px; padding: 2rem 1.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-top: 4px solid var(--primary); transition: transform var(--transition-time), box-shadow var(--transition-time); text-align: center; }
-    .service-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
-    .icon-container { width: 60px; height: 60px; background: var(--primary); color: var(--light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 2rem; }
-    .service-card h5 { font-size: 1.125rem; margin-bottom: 0.5rem; font-weight: 600; }
-    .service-desc { font-size: 1rem; line-height: 1.5; color: var(--dark); }
+    /* HERO */
+    .hero{background:radial-gradient(1200px 600px at 70% -10%, rgba(11,95,255,.15), transparent), linear-gradient(180deg, #f8fbff 0%, #ffffff 30%);}
+    .hero .title{font-size:clamp(1.8rem,3.2vw,3rem);font-weight:700;letter-spacing:-.02em}
+    .hero .subtitle{font-size:clamp(1rem,2vw,1.25rem);color:#374151}
+    .trustbar img{height:28px;opacity:.85;filter:grayscale(1)}
 
-    /* Garantía */
-    .guarantee-card { background: var(--light); border: 2px solid var(--primary); border-radius: 12px; padding: 30px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); margin: 40px auto; max-width: 600px; text-align: center; }
+    /* Value props */
+    .vp-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem}
+    .icon-bubble{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:#eef4ff;color:var(--primary)}
 
-    /* Testimonio */
-    .testimonial-section { background: var(--light); padding: 80px 20px; }
-    .testimonial-content { display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 900px; margin: auto; }
-    @media(min-width: 992px) {
-      .testimonial-content { flex-direction: row; align-items: center; }
-    }
-    .testimonial-img { width: 100%; max-width: 400px; object-fit: cover; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-radius: 12px; }
-    .testimonial-text { background: var(--section-alt); padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); text-align: left; }
-    @media(min-width: 992px) {
-      .testimonial-text { margin-left: 2rem; }
-    }
+    /* Sections */
+    section{padding:72px 0}
+    .section-alt{background:var(--section)}
 
-    footer { background: var(--dark); color: var(--light); padding: 40px 20px; }
-    footer img { display: block; margin: 0 auto 15px; width: 120px; }
-    footer p, footer a { text-align: center; margin: 5px 0; color: var(--light); }
-    .small-muted { color: #bbb; font-size: .9rem; margin-top: 15px; text-align: center; }
+    /* Services */
+    .service-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:2rem;height:100%;border:1px solid #eef2f7}
+    .service-card h5{font-weight:700}
 
-    @media(max-width:576px) {
-      header { padding: 60px 10px; }
-      header h1 { font-size: 2rem; }
+    /* Process */
+    .step{background:#fff;border-radius:var(--radius);border:1px dashed #e5e7eb;padding:1.25rem}
+
+    /* Testimonial */
+    .testi{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:2rem}
+    .avatar{width:64px;height:64px;border-radius:50%;object-fit:cover}
+
+    /* Guarantee */
+    .guarantee{border:2px solid var(--primary);border-radius:var(--radius);padding:2rem;background:#fff}
+
+    /* FAQ */
+    .faq-item{border-bottom:1px solid #e5e7eb}
+    .faq-item button{width:100%;text-align:left;padding:1rem 0;font-weight:600}
+
+    /* Footer */
+    footer{background:#0f172a;color:#cbd5e1}
+    footer a{color:#e2e8f0}
+
+    /* Mobile sticky CTA */
+    .mobile-cta{position:sticky;bottom:0;background:#fff;border-top:1px solid #e5e7eb;z-index:1020}
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce){
+      *{animation: none !important; transition: none !important}
+      html{scroll-behavior:auto}
     }
   </style>
+
+  <!-- JSON-LD: Organization + Website + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"ShopperNerds",
+    "url":"https://shoppernerds.com/",
+    "logo":"https://shoppernerds.com/logo-primary.png",
+    "founder":"Jorge Gálvez",
+    "address":{"@type":"PostalAddress","addressLocality":"Santiago","addressCountry":"CL"},
+    "sameAs":["https://www.linkedin.com/in/jorgegalvezo/"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"ShopperNerds",
+    "url":"https://shoppernerds.com/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://shoppernerds.com/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
 </head>
 <body>
-  <header class="animate__animated animate__fadeIn">
+  <!-- NAV -->
+  <nav class="navbar sticky navbar-expand-lg" aria-label="Principal">
     <div class="container">
-      <h1 class="mb-3">HAZ CRECER TU PYME</h1>
-      <h2>CON ESTRATEGIAS QUE MARCAN LA DIFERENCIA</h2>
-      <p class="lead mb-2">Conecta con expertos que han impulsado grandes marcas.</p>
-      <p class="mb-4">Y lleva tu negocio al siguiente nivel 🚀</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" target="_blank" rel="noopener" class="btn btn-light btn-custom animate__animated animate__pulse">📋 Asesoría de Diagnóstico Gratis</a>
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
+        <img src="assets/img/logo-primary.png" alt="Logo ShopperNerds" width="36" height="36" loading="eager" />
+        <strong>ShopperNerds</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Mostrar menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proceso">Proceso</a></li>
+          <li class="nav-item"><a class="nav-link" href="#casos">Resultados</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        </ul>
+        <div class="ms-lg-3 mt-3 mt-lg-0">
+          <a href="#form" class="btn btn-primary btn-pill" data-bs-toggle="modal" data-bs-target="#leadModal"><i class="fa-solid fa-bolt me-2"></i>Diagnóstico gratis</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero py-5" id="top">
+    <div class="container py-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <h1 class="title mb-3">Impulsa tu PYME con tácticas que <span class="text-primary">venden hoy</span></h1>
+          <p class="subtitle mb-4">Ejecución experta en <strong>Trade Marketing</strong>, <strong>Ventas</strong> y <strong>Branding</strong> para crecer en PDV físicos y canales digitales. <strong>Garantía 100% satisfacción</strong>.</p>
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <a class="btn btn-primary btn-pill" data-bs-toggle="modal" data-bs-target="#leadModal"><i class="fa-solid fa-magnifying-glass-chart me-2"></i>Quiero mi diagnóstico</a>
+            <a class="btn btn-outline-primary btn-pill" href="#casos"><i class="fa-solid fa-chart-line me-2"></i>Ver resultados</a>
+          </div>
+          <div class="d-flex align-items-center gap-3 mt-4">
+            <div class="icon-bubble" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
+            <small class="text-muted">Sin riesgo: si no te sirve, <strong>te devolvemos el 100%</strong>.</small>
+          </div>
+          <div class="trustbar d-flex flex-wrap align-items-center gap-4 mt-4" aria-label="Marcas donde hemos trabajado">
+            <img src="assets/img/logos/logo1.svg" alt="Marca 1" loading="lazy">
+            <img src="assets/img/logos/logo2.svg" alt="Marca 2" loading="lazy">
+            <img src="assets/img/logos/logo3.svg" alt="Marca 3" loading="lazy">
+            <img src="assets/img/logos/logo4.svg" alt="Marca 4" loading="lazy">
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="vp-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="icon-bubble"><i class="fa-solid fa-rocket"></i></div>
+              <h2 class="h5 m-0">Lo que obtienes en 10 días</h2>
+            </div>
+            <ul class="list-unstyled m-0">
+              <li class="d-flex gap-2 align-items-start mb-2"><i class="fa-solid fa-circle-check text-success mt-1"></i><span>Plan de acción priorizado (Quick Wins + Roadmap 90 días)</span></li>
+              <li class="d-flex gap-2 align-items-start mb-2"><i class="fa-solid fa-circle-check text-success mt-1"></i><span>2-3 tácticas ejecutadas en PDV o digital</span></li>
+              <li class="d-flex gap-2 align-items-start mb-2"><i class="fa-solid fa-circle-check text-success mt-1"></i><span>Tablero de métricas con <abbr title="Indicadores Clave de Desempeño">KPI</abbr> de ventas</span></li>
+              <li class="d-flex gap-2 align-items-start"><i class="fa-solid fa-circle-check text-success mt-1"></i><span>Sesión de cierre con próximos pasos</span></li>
+            </ul>
+            <div class="d-grid mt-3">
+              <button class="btn btn-primary btn-pill" data-bs-toggle="modal" data-bs-target="#leadModal">Agenda tu diagnóstico</button>
+            </div>
+            <small class="text-muted d-block mt-2">⏱️ Cupos limitados esta semana</small>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <section id="como-funciona" class="section-alt animate__animated animate__fadeInUp">
+  <!-- VALUE PROPS -->
+  <section aria-label="Beneficios">
     <div class="container">
-      <h2>✅ Cómo funciona</h2>
-      <div class="how-grid">
-        <div class="how-card animate__animated animate__fadeInUp">
-          <div class="how-icon">📝</div>
-          <div class="how-title">Completa el Formulario</div>
-          <div class="how-desc">Déjanos tus datos y un resumen para entender tus necesidades.</div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="vp-card h-100">
+            <div class="icon-bubble mb-3"><i class="fa-solid fa-users-gear"></i></div>
+            <h3 class="h5">Expertos que ya escalaron marcas</h3>
+            <p class="m-0 text-muted">Equipo senior con experiencia en retail, telecom, consumo masivo y e‑commerce.</p>
+          </div>
         </div>
-        <div class="how-card animate__animated animate__fadeInUp animate__delay-1s">
-          <div class="how-icon">🔍</div>
-          <div class="how-title">Contacto Personalizado</div>
-          <div class="how-desc">Te conectamos con el experto ideal según tu industria y canal.</div>
+        <div class="col-md-4">
+          <div class="vp-card h-100">
+            <div class="icon-bubble mb-3"><i class="fa-solid fa-gauge-high"></i></div>
+            <h3 class="h5">Enfoque a resultados</h3>
+            <p class="m-0 text-muted">Tácticas que mueven ventas y se miden en un tablero claro de KPI.</p>
+          </div>
         </div>
-        <div class="how-card animate__animated animate__fadeInUp animate__delay-2s">
-          <div class="how-icon">🚀</div>
-          <div class="how-title">Asesoría de Impacto</div>
-          <div class="how-desc">Inicias tu proyecto con reportes y resultados medibles.</div>
+        <div class="col-md-4">
+          <div class="vp-card h-100">
+            <div class="icon-bubble mb-3"><i class="fa-solid fa-shield"></i></div>
+            <h3 class="h5">Garantía 100%</h3>
+            <p class="m-0 text-muted">Si no te sirve, te devolvemos el 100% de tu inversión en asesoría.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="servicios" class="section-color animate__animated animate__fadeInUp">
+  <!-- SERVICES -->
+  <section id="servicios" class="section-alt">
     <div class="container">
-      <h2>📈 Servicios Destacados</h2>
-      <div class="services-grid">
-        <div class="service-card animate__animated animate__fadeInUp">
-          <div class="icon-container">🎯</div>
-          <h5>Estrategia de Trade Marketing</h5>
-          <p class="service-desc">Diseño de planes tácticos para aumentar visibilidad y ventas en el punto de venta físico o digital. Enfocado en almacenes, minimarkets y tiendas que quieren destacar.</p>
+      <h2 class="h3 text-center mb-4">Servicios</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon-bubble"><i class="fa-solid fa-bullseye"></i></div>
+              <h5 class="m-0">Estrategia de Trade Marketing</h5>
+            </div>
+            <p class="text-muted">Visibilidad, activaciones y materiales que convierten en PDV físico.</p>
+            <ul class="text-muted small mb-0">
+              <li>Planogramas y exhibiciones</li>
+              <li>Promociones y sell‑in/sell‑out</li>
+              <li>Rutas y control de ejecución</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card animate__animated animate__fadeInUp animate__delay-1s">
-          <div class="icon-container">📊</div>
-          <h5>Analítica de Ventas</h5>
-          <p class="service-desc">Revisión de datos de ventas para detectar patrones y oportunidades. Ideal para tomar decisiones concretas sin perder tiempo ni dinero.</p>
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon-bubble"><i class="fa-solid fa-chart-line"></i></div>
+              <h5 class="m-0">Analítica de Ventas</h5>
+            </div>
+            <p class="text-muted">Diagnóstico de datos para encontrar palancas de crecimiento.</p>
+            <ul class="text-muted small mb-0">
+              <li>Panel KPI & cohortes</li>
+              <li>Elasticidad precio/promoción</li>
+              <li>Forecast simple</li>
+            </ul>
+          </div>
         </div>
-        <div class="service-card animate__animated animate__fadeInUp animate__delay-2s">
-          <div class="icon-container">🌐</div>
-          <h5>Marketing Digital &amp; Ecommerce</h5>
-          <p class="service-desc">Estrategias para potenciar tu presencia online y montar tu canal de ecommerce. Ideal para quienes desean escalar su negocio digitalmente sin depender de agencias.</p>
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon-bubble"><i class="fa-solid fa-globe"></i></div>
+              <h5 class="m-0">Marketing Digital & Ecommerce</h5>
+            </div>
+            <p class="text-muted">Embudo completo: adquisición, conversión y retención.</p>
+            <ul class="text-muted small mb-0">
+              <li>Ads & performance</li>
+              <li>CRM y automatizaciones</li>
+              <li>UX de tienda</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-alt animate__animated animate__fadeInUp">
-    <div class="guarantee-card animate__animated animate__fadeInDown">
-      <h2>🛡️ Garantía de Éxito Total</h2>
-      <p>Si no quedas conforme con la asesoría de nuestro profesional, te devolvemos el 100% de tu dinero.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" class="btn btn-primary btn-custom">¡Lo Quiero!</a>
-    </div>
-  </section>
-
-  <section id="testimonio" class="testimonial-section animate__animated animate__fadeInUp">
-    <div class="container testimonial-content">
-      <img src="assets/img/testimonio-jorge-galvez.jpg" alt="Jorge Gálvez" class="testimonial-img" />
-      <div class="testimonial-text">
-        <p class="testimonial-quote">Después de 10 años liderando proyectos de <strong>trade marketing</strong>, <strong>branding</strong> y <strong>ventas</strong> para grandes empresas, creé ShopperNerds para poner esa estrategia al alcance de las PYMES.</p>
-        <p class="testimonial-author">— Jorge Gálvez, Fundador &amp; CEO</p>
+  <!-- PROCESS -->
+  <section id="proceso">
+    <div class="container">
+      <h2 class="h3 text-center mb-4">Cómo trabajamos</h2>
+      <div class="row g-3">
+        <div class="col-md-3"><div class="step h-100"><strong>1.</strong> Brief corto (10 min) y acceso a métricas básicas.</div></div>
+        <div class="col-md-3"><div class="step h-100"><strong>2.</strong> Diagnóstico + quick wins priorizados.</div></div>
+        <div class="col-md-3"><div class="step h-100"><strong>3.</strong> Ejecución táctica en PDV/digital.</div></div>
+        <div class="col-md-3"><div class="step h-100"><strong>4.</strong> Tablero, aprendizajes y próximo sprint.</div></div>
+      </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-primary btn-pill" data-bs-toggle="modal" data-bs-target="#leadModal">Agenda diagnóstico</button>
       </div>
     </div>
   </section>
 
-  <footer class="animate__animated animate__fadeIn">
-    <img src="assets/img/logo-primary.png" alt="ShopperNerds" />
-    <p>📍 Contacto y redes:</p>
-    <p>📧 <a href="mailto:jorge@shoppernerds.com">jorge@shoppernerds.com</a> | 🔗 <a href="https://www.linkedin.com/in/jorgegalvezo/">LinkedIn</a></p>
-    <div class="d-flex justify-content-center mt-3">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1ootbWAUN09vI5x_p-yy9U-XbODmdEJHwxANy6mwN0beMEg/viewform?embedded=true" target="_blank" rel="noopener" class="btn btn-outline-light btn-custom">🤓 Únete como Experto</a>
+  <!-- CASES / SOCIAL PROOF -->
+  <section id="casos" class="section-alt">
+    <div class="container">
+      <h2 class="h3 text-center mb-4">Resultados recientes</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="testi h-100">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <img class="avatar" src="assets/img/casos/caso1.jpg" alt="Caso de éxito 1" loading="lazy">
+              <div>
+                <strong>Retail Telco</strong>
+                <div class="small text-muted">+18% sell‑out en 8 semanas</div>
+              </div>
+            </div>
+            <p class="m-0 text-muted small">Optimización de exhibiciones clave y promo calendar. Control de ruta y reposición.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testi h-100">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <img class="avatar" src="assets/img/casos/caso2.jpg" alt="Caso de éxito 2" loading="lazy">
+              <div>
+                <strong>Ecommerce Pyme</strong>
+                <div class="small text-muted">ROAS 4.2x en 30 días</div>
+              </div>
+            </div>
+            <p class="m-0 text-muted small">Embudo ads → CRO en PDP/checkout → email post‑compra.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testi h-100">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <img class="avatar" src="assets/img/casos/caso3.jpg" alt="Caso de éxito 3" loading="lazy">
+              <div>
+                <strong>Consumo Masivo</strong>
+                <div class="small text-muted">+12% ticket promedio</div>
+              </div>
+            </div>
+            <p class="m-0 text-muted small">Mix, bundles y trade‑ups en góndola con soporte de promotoría.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="small-muted">© 2025 ShopperNerds. Todos los derechos reservados.</p>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section>
+    <div class="container">
+      <div class="guarantee mx-auto" style="max-width:860px">
+        <div class="d-flex align-items-center gap-3">
+          <div class="icon-bubble"><i class="fa-solid fa-shield-halved"></i></div>
+          <div>
+            <h2 class="h4 m-0">Garantía de satisfacción 100%</h2>
+            <p class="text-muted mb-2">Si no quedas satisfecho, devolvemos el 100% de la inversión en asesoría. Así de simple.</p>
+          </div>
+        </div>
+        <div class="d-flex flex-wrap gap-2 mt-2">
+          <span class="badge text-bg-light border">Sin permanencia</span>
+          <span class="badge text-bg-light border">Contrato claro</span>
+          <span class="badge text-bg-light border">Enfoque en ROI</span>
+        </div>
+        <div class="text-end mt-3"><button class="btn btn-primary btn-pill" data-bs-toggle="modal" data-bs-target="#leadModal">Quiero mi diagnóstico</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section-alt">
+    <div class="container">
+      <h2 class="h3 text-center mb-3">Preguntas frecuentes</h2>
+      <div class="mx-auto" style="max-width:860px">
+        <div class="faq-item py-2">
+          <button class="btn p-0" data-bs-toggle="collapse" data-bs-target="#f1" aria-expanded="false" aria-controls="f1">¿Qué incluye el diagnóstico gratis?</button>
+          <div id="f1" class="collapse"><p class="text-muted mt-2">Revisión rápida de tus métricas, hipótesis de crecimiento, y un plan priorizado con quick wins y próximos pasos.</p></div>
+        </div>
+        <div class="faq-item py-2">
+          <button class="btn p-0" data-bs-toggle="collapse" data-bs-target="#f2">¿Cuánto demora ver resultados?</button>
+          <div id="f2" class="collapse"><p class="text-muted mt-2">Solemos ejecutar tácticas en la <strong>primera semana</strong> y medir su impacto en el tablero de KPI.</p></div>
+        </div>
+        <div class="faq-item py-2">
+          <button class="btn p-0" data-bs-toggle="collapse" data-bs-target="#f3">¿Trabajan por proyecto o mensualidad?</button>
+          <div id="f3" class="collapse"><p class="text-muted mt-2">Ambos. Definimos el formato según objetivos, plazos y recursos. Siempre con metas y métricas claras.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section aria-label="Cierre">
+    <div class="container text-center">
+      <h2 class="h4">¿Listo para vender más?</h2>
+      <p class="text-muted">Agenda tu diagnóstico gratuito y recibe un plan de ataque en 10 días.</p>
+      <button class="btn btn-primary btn-pill" data-bs-toggle="modal" data-bs-target="#leadModal"><i class="fa-solid fa-calendar-check me-2"></i>Reservar diagnóstico</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="pt-5 pb-4">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-6 d-flex align-items-center gap-3">
+          <img src="assets/img/logo-primary.png" width="40" height="40" alt="ShopperNerds" loading="lazy"/>
+          <div>
+            <strong>ShopperNerds</strong>
+            <div class="small text-muted">Santiago, Chile</div>
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a class="me-3" href="mailto:jorge@shoppernerds.com">jorge@shoppernerds.com</a>
+          <a class="me-3" href="https://www.linkedin.com/in/jorgegalvezo/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://wa.me/56900000000" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+        </div>
+      </div>
+      <div class="small text-center mt-3">© 2025 ShopperNerds. Todos los derechos reservados.</div>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta d-lg-none py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+      <strong class="small">Diagnóstico sin costo</strong>
+      <button class="btn btn-primary btn-pill btn-sm" data-bs-toggle="modal" data-bs-target="#leadModal">Agendar</button>
+    </div>
+  </div>
+
+  <!-- Lead Modal (Google Form embebido) -->
+  <div class="modal fade" id="leadModal" tabindex="-1" aria-labelledby="leadLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="h5 modal-title" id="leadLabel">Agenda tu diagnóstico gratuito</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body p-0" style="height:min(80vh,760px)">
+          <iframe id="leadFrame" title="Formulario de diagnóstico" src="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" style="border:0" width="100%" height="100%" loading="lazy"></iframe>
+        </div>
+        <div class="modal-footer d-flex justify-content-between">
+          <small class="text-muted">Protegemos tus datos. No enviamos spam.</small>
+          <a class="btn btn-outline-primary btn-pill" href="https://docs.google.com/forms/d/e/1FAIpQLSc42A3RXg4yb-NKtmSgUe64iNTr19IyOt0vN9R2ZBbeKYa_dg/viewform?embedded=true" target="_blank" rel="noopener">Abrir en nueva pestaña</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    // Pasa UTM de la URL al iframe del formulario (para tracking simple sin cookies)
+    (function(){
+      const qs = window.location.search.replace(/^\?/, '');
+      if(!qs) return;
+      const iframe = document.getElementById('leadFrame');
+      if(!iframe) return;
+      const url = new URL(iframe.src);
+      url.search += (url.search ? '&' : '?') + qs;
+      iframe.src = url.toString();
+    })();
+
+    // Event tracking básico (enviar a gtag si existe)
+    document.querySelectorAll('[data-bs-target="#leadModal"]').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        window.gtag && gtag('event','open_lead_modal',{event_category:'engagement'});
+      });
+    });
+  </script>
+
+  <!-- Google Analytics (opcional) 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script> -->
 </body>
 </html>
+
